@@ -1,39 +1,31 @@
-import { useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import './styles.scss'
 
 interface ButtonProps {
-  text: string
+  children: ReactNode
 }
 
-
-export const Button = ({text, ...rest}: ButtonProps) => {
-  const buttonRef = useRef(null as any);
+export const Button = ({ children, ...rest }: ButtonProps) => {
 
   function focusButtonMove(event: any) {
-		if (!event?.target && !buttonRef?.current) return;
-		buttonRef.current.style.setProperty('--xPosition', `${event.clientX - buttonRef.current.offsetLeft}px`);
-		buttonRef.current.style.setProperty('--yPosition', `${event.clientY - buttonRef.current.offsetTop}px`);
-	}
-
-
-  useEffect(() => {
-    document.addEventListener('pointermove', focusButtonMove)
-
-    return () => {
-      document.removeEventListener('pointermove', focusButtonMove)
-    }
-  }, [])
+    // if (!event?.target) return;
+    event?.target.style.setProperty('--xPosition', `${event.clientX - event?.target.offsetLeft}px`);
+    event?.target.style.setProperty('--yPosition', `${event.clientY - event?.target.offsetTop}px`);
+  }
 
   return (
+    <div>
+
       <button
         {...rest}
         className="buttonTest"
-        ref={buttonRef}
+        onPointerMove={focusButtonMove}
       >
-        {text}
+        {children}
       <div>
-        {text}        
+          {children}
       </div>
     </button>
+    </div>
   )
 }

@@ -30,6 +30,7 @@
     height: 100%;
     clip-path: circle(0 at var(--xPosition, 50%) var(--yPosition, 50%));
     color: var(--buttonBackGround);
+    pointer-events: none;
   }
 
   &:hover {

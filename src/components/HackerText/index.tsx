@@ -1,13 +1,13 @@
 import styles from './styles.module.scss'
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let interval = null as any;
 
 
 export const HackerText = () => {
   const text = '@RISINGUS'
 
   function scrambleText(event: any) {
-    let interval = null as any;
     let iteration = 0;
 
     clearInterval(interval)
@@ -33,5 +33,5 @@ export const HackerText = () => {
     }, 30)
   }
 
-  return <h1 className={styles.text} onMouseOver={scrambleText}>{text}</h1>
+  return <h1 className={styles.text} onPointerEnter={scrambleText}> {text}</h1 >
 }

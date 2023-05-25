@@ -27,16 +27,9 @@ export function ButtonWithRipple() {
 		button.appendChild(circle)
 	}
 
-	useEffect(() => {
-		document.addEventListener('click', rippleEffect)
-
-		return () => {
-			document.removeEventListener('click', rippleEffect)
-		}
-	}, [])
 
 	return (
-		<button ref={buttonRef} className='buttonRipple'>
+		<button ref={buttonRef} className='buttonRipple' onClick={rippleEffect}>
 			Ripple
 		</button>
 	)
