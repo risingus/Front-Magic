@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import styles from './styles.module.scss'
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -6,9 +7,13 @@ let interval = null as any;
 
 export const HackerText = () => {
   const text = '@RISINGUS'
+  const textRef = useRef(null as any)
 
   function scrambleText(event: any) {
     let iteration = 0;
+    if (!textRef?.current) return;
+
+    if (!textRef?.current.contains(event?.target)) return
 
     clearInterval(interval)
 
@@ -33,5 +38,5 @@ export const HackerText = () => {
     }, 30)
   }
 
-  return <h1 className={styles.text} onPointerEnter={scrambleText}> {text}</h1 >
+  return <h1 className={styles.text} onPointerEnter={scrambleText} ref={textRef}> {text}</h1 >
 }

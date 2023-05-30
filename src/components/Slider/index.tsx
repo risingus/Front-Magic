@@ -7,7 +7,8 @@ export const Slider = () =>  {
 	const containerRef = useRef(null as any);
 
 	function handleMove(event: any) {
-		leftRef.current.style.width = `${(event.clientX / containerRef.current.clientWidth) * 100}%`;
+		console.dir(containerRef.current)
+		leftRef.current.style.width = `${Math.max(event.clientX / (containerRef.current.clientWidth + containerRef.current.offsetLeft)) * 100}%`;
 	}
 
 	return (
@@ -27,7 +28,6 @@ export const Slider = () =>  {
 					/>
 				</div>
 			</div>
-
     </div>
 			
 	);

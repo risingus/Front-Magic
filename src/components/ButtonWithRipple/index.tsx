@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import './styles.scss'
 
+
 export function ButtonWithRipple() {
 	const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -30,7 +31,7 @@ export function ButtonWithRipple() {
 
 	return (
 		<button ref={buttonRef} className='buttonRipple' onClick={rippleEffect}>
-			Ripple
+			Click Me
 		</button>
 	)
 }
