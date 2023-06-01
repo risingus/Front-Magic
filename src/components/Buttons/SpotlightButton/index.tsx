@@ -1,14 +1,8 @@
 import { ReactNode, useEffect, useRef } from "react";
 import './styles.scss'
 
-interface ButtonProps {
-  children: ReactNode
-}
-
-export const Button = ({ children, ...rest }: ButtonProps) => {
+export const SpotlightButton = ({ ...rest }) => {
   const buttonRef = useRef(null as any)
-
-
 
   function focusButtonMove(event: any) {
     console.dir(event.target)
@@ -25,15 +19,15 @@ export const Button = ({ children, ...rest }: ButtonProps) => {
   }
 
   return (
-      <button
+    <button
       ref={buttonRef}
-      {...rest} 
-        className="buttonTest"
-        onPointerMove={focusButtonMove}
-      >
-        {children}
+      {...rest}
+      className="buttonTest"
+      onPointerMove={focusButtonMove}
+    >
+      Hover me
       <div>
-          {children}
+        Hover me
       </div>
     </button>
   )

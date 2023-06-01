@@ -1,8 +1,9 @@
 
 
 .container {
-  height: 30rem;
-  width: 60rem;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
 
   .sliderContainer {
     width: 100%;
@@ -16,16 +17,49 @@
       overflow: hidden;
       position: absolute;
       
-      img {
-        object-fit: cover;
+      > div {
+        overflow: hidden;
         width: 100vw;
         height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+
+        > p {
+          font-family: 'Inknut Antiqua';
+          font-size: 4rem;
+        }
+         
+        > strong {
+          font-size: 10rem;
+          font-family: 'Dragon Knight';
+          letter-spacing: 1rem;
+        }
       }
     }
 
     #left {
-      width: 60%;
-      z-index: 2;
+      width: 42%;
+      z-index: 1;
+      background-color: #ffc000;
+      color: black;
+
+      strong {
+        color: #ff0040;
+      }
+    }
+
+    #right {
+      background-color: #ff0040;
+      color: white;
+      
+      strong{
+        color: #ffc000;
+      }
+
     }
 
   }

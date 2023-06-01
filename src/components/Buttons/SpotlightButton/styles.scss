@@ -1,6 +1,6 @@
 .buttonTest {
   
-  --buttonBackGround: cornflowerblue;
+  --buttonBackGround: #ff0040;
   --xPosition: 0;
   --yPosition: 0;
   --circleSize: 0;
@@ -10,18 +10,19 @@
   align-items: center;
   justify-content: center;
   height: 4rem;
-  width: 12rem;
+  width: 10rem;
   background-color: var(--buttonBackGround);
   border: none;
   cursor: pointer;
   position: relative;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   overflow: hidden;
   padding: 0;
   margin: 0;
   border-radius: 4px;
+  outline: none;
   div {
     display: flex;
     flex-direction: row;

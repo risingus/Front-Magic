@@ -1,0 +1,108 @@
+ 
+
+	.menuButton {
+    --circleColor: rgba(255, 255, 255, 0.1);
+    z-index: 5;
+		position: absolute;
+		bottom: 2rem;
+		left: 2rem;
+		width: 3rem;
+		height: 3rem;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		background-color: transparent;
+		border-radius: 9999999999px;
+		border-width: 2px;
+		border-color: var(--circleColor);
+		border-style: solid;
+		color: white;
+		transition: background-color 0.2s ease-in-out;
+
+		&:hover {
+			background-color: #ff0040;
+		}
+	}
+
+  .menuContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 4;
+    
+    .menu {
+      position: relative;
+      left: -80vw;
+      top: -50vh;
+      width: 200vh;
+      height: 200vh;
+      background-color: transparent;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--circleColor);
+
+      > div {
+        position: absolute;
+        width: 50vh;
+        height: 50vh;
+        left: 65vw;  
+        top: 75vh;
+        bottom: 0;
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--circleColor);
+        border-radius: 50%;
+        color: white;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+
+
+        > img {
+          width: 8rem;
+          height: 8rem;
+          object-fit: contain;
+          margin-right: 2rem;
+        }
+      }
+
+      > section {
+        position: relative;
+        background-color: transparent;
+        width: 25rem;
+        height: 100vh;
+        left: -1vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+        > a {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0.5rem;
+          text-decoration: none;
+          color: white;
+          text-transform: capitalize;
+          padding: 1rem;
+          width: 10rem;
+          border-color: transparent;
+        }
+      }
+
+    }
+   
+  }

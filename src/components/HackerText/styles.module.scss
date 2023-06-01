@@ -5,10 +5,11 @@
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
   font-family: 'Space Mono', monospace;
   font-weight: 700;
-
+  text-align: center;
+  margin: 0 10vw;
 
   &:hover {
-    background-color: black;
+    background-color: #ff0040;
     color: white;
   }
 }
